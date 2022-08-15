@@ -4,11 +4,11 @@ module.exports = {
     '@react-native-community',
     'airbnb-typescript',
     'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react',
   ],
   plugins: ['react-hooks'],
   rules: {
+    "import/no-extraneous-dependencies": 'off',
+    "import/extensions": 'off',
     'flowtype/no-types-missing-file-annotation': 0,
     'import/no-unresolved': 'off',
     'react/jsx-props-no-spreading': 'off',
@@ -19,6 +19,7 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
+        singleQuote: true,
         endOfLine: 'auto',
       },
     ],
