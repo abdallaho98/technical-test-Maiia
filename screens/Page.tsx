@@ -1,18 +1,22 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList} from 'react-native';
+import {PharmacieJson, pharmacieMapper} from '../src/mappers/PharmacieMapper';
 
 const URL =
   'https://www.maiia.com/api/pat-public/hcd?limit=500&locality=75001-PARIS&page=0&speciality.shortName=pharmacie';
 
 const Page = ({}) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Pharmacie[]>([]);
   const [totalLoaded, setTotalLoaded] = useState(0);
 
   useEffect(() => {
     fetch(URL)
       .then((response) => response.json())
       .then((json) => {
-        setData(json.items);
+        const mappedJson: Pharmacie[] = json.items.map((item: PharmacieJson) =>
+          pharmacieMapper(item),
+        );
+        setData(mappedJson);
       })
       .catch((error) => {
         console.error(error);
@@ -23,7 +27,7 @@ const Page = ({}) => {
     setTotalLoaded(data.length);
   }, [data]);
 
-  const renderItem = ({item}) => <Text>{item.center.name}</Text>;
+  const renderItem = ({item}: {item: Pharmacie}) => <Text>{item.name}</Text>;
 
   return (
     <View>
