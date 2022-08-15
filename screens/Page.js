@@ -1,13 +1,13 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react';
+import {View, Text} from 'react-native';
 
 const URL =
-  "https://www.maiia.com/api/pat-public/hcd?limit=500&locality=75001-PARIS&page=0&speciality.shortName=pharmacie";
+  'https://www.maiia.com/api/pat-public/hcd?limit=500&locality=75001-PARIS&page=0&speciality.shortName=pharmacie';
 
 class Page extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: [], totalLoaded: 0 };
+    this.state = {data: [], totalLoaded: 0};
     this.isMount = null;
   }
 
@@ -17,7 +17,7 @@ class Page extends React.Component {
     fetch(URL)
       .then((response) => response.json())
       .then((json) => {
-        this.setState({ data: json.items });
+        this.setState({data: json.items});
       })
       .catch((error) => {
         console.error(error);
@@ -26,7 +26,7 @@ class Page extends React.Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (this.state.data.length !== prevState.data.length) {
-      this.setState({ totalLoaded: this.state.data.length });
+      this.setState({totalLoaded: this.state.data.length});
     }
   }
 

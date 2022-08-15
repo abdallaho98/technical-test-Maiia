@@ -1,11 +1,11 @@
-import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { FontAwesome } from "@expo/vector-icons";
-import Home from "../screens/Home";
-import Page from "../screens/Page";
-import { colors } from "../styles/colors";
+import * as React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {FontAwesome} from '@expo/vector-icons';
+import Home from '../screens/Home';
+import Page from '../screens/Page';
+import {colors} from '../styles/colors';
 
 const Router = () => {
   return (
@@ -23,7 +23,7 @@ const RootNavigator = () => {
       <Stack.Screen
         name="Root"
         component={BottomTabNavigator}
-        options={{ headerShown: false }}
+        options={{headerShown: false}}
       />
     </Stack.Navigator>
   );
@@ -42,23 +42,23 @@ const BottomTabNavigator = () => (
       name="Maiia"
       component={Home}
       options={() => ({
-        title: "Test technique Maiia",
-        tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+        title: 'Test technique Maiia',
+        tabBarIcon: ({color}) => <TabBarIcon name="home" color={color} />,
         headerStyle: {
           backgroundColor: colors.primary,
         },
         headerTitleStyle: {
-          fontWeight: "bold",
+          fontWeight: 'bold',
         },
-        headerTintColor: "#fff",
+        headerTintColor: '#fff',
       })}
     />
     <BottomTab.Screen
       name="Code !"
       component={Page}
       options={{
-        title: "Code !",
-        tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        title: 'Code !',
+        tabBarIcon: ({color}) => <TabBarIcon name="code" color={color} />,
       }}
     />
   </BottomTab.Navigator>

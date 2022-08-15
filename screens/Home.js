@@ -1,7 +1,7 @@
-import React from "react";
-import { StyleSheet, Text, Image, ScrollView } from "react-native";
-import { doc } from "../constants/doc";
-import { colors } from "../styles/colors";
+import React from 'react';
+import {StyleSheet, Text, Image, ScrollView} from 'react-native';
+import {doc} from '../constants/doc';
+import {colors} from '../styles/colors';
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       <Text style={s.text}>{doc.info_2}</Text>
       <Image
         style={s.image}
-        source={require("../assets/images/card-ui.png")}
+        source={require('../assets/images/card-ui.png')}
         resizeMode="contain"
       />
       <Text style={s.text}>{doc.info_3}</Text>
@@ -20,7 +20,7 @@ const Home = () => {
       <Text style={s.text}>{doc.info_5}</Text>
       <Text style={s.text}>{doc.nb}</Text>
       <Text style={s.subtitle}>{doc.bonus}</Text>
-      <Text style={[s.text, { marginBottom: 100 }]}>{doc.bonus_q}</Text>
+      <Text style={[s.text, {marginBottom: 100}]}>{doc.bonus_q}</Text>
     </ScrollView>
   );
 };
@@ -30,16 +30,16 @@ const s = StyleSheet.create({
     padding: 10,
   },
   title: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 30,
-    textAlign: "center",
+    textAlign: 'center',
     color: colors.secondary,
     marginVertical: 20,
   },
   subtitle: {
-    fontWeight: "400",
+    fontWeight: '400',
     fontSize: 20,
-    textAlign: "center",
+    textAlign: 'center',
     color: colors.secondary,
     marginVertical: 20,
   },
@@ -49,7 +49,7 @@ const s = StyleSheet.create({
     fontSize: 15,
   },
   image: {
-    width: "100%",
+    width: '100%',
   },
 });
 
