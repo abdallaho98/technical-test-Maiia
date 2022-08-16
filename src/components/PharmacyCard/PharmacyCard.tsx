@@ -7,7 +7,10 @@ import {
   ContainerRef,
   UpperContainer,
   TextContainer,
-  DescriptionText,
+  AddressText,
+  HorizontalContainer,
+  CustomVector,
+  DistanceText,
 } from './PharmacyCard.s';
 
 type Props = {
@@ -22,12 +25,18 @@ const PharmacyCard = ({ pharmacy, onPress }: Props) => {
         <UpperContainer>
           <CustomImage
             source={{
-              uri: `data:image/jpeg;base64,`,
+              uri: pharmacy.image,
             }}
           />
           <TextContainer>
             <TitleText numberOfLines={1}>{pharmacy.name}</TitleText>
-            <DescriptionText numberOfLines={1}>Hello</DescriptionText>
+            <AddressText numberOfLines={1}>{pharmacy.address}</AddressText>
+            <HorizontalContainer>
+              <CustomVector
+                source={require('../../../assets/images/map-marker.png')}
+              />
+              <DistanceText>Hello</DistanceText>
+            </HorizontalContainer>
           </TextContainer>
         </UpperContainer>
       </ContainerRef>

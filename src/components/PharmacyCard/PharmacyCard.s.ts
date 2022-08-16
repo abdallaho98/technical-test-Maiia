@@ -45,8 +45,29 @@ export const TitleText = styled.Text`
   color: ${(props) => props.theme.colors.primary};
 `;
 
-export const DescriptionText = styled.Text`
+export const AddressText = styled.Text`
+  margin-top: ${(props) => props.theme.dimensions.space / 2}px;
   font-family: 'SpaceMono-Regular';
   font-size: ${(props) => props.theme.font.sizes.TooSmall}px;
   color: ${(props) => props.theme.colors.black};
+`;
+
+export const DistanceText = styled.Text`
+  margin-left: ${(props) => props.theme.dimensions.space}px;
+  margin-top: ${(props) => props.theme.dimensions.space / 2}px;
+  font-family: 'SpaceMono-Regular';
+  font-size: ${(props) => props.theme.font.sizes.TooMuchSmall}px;
+  color: ${(props) => props.theme.colors.grey};
+`;
+
+export const CustomVector = styled(Image)`
+  margin-top: ${(props) => props.theme.dimensions.space / 2}px;
+  width: 16px;
+  height: 16px;
+  tint-color: ${(props) => props.theme.colors.grey};
+`;
+
+export const HorizontalContainer = styled.View`
+  flex: 1;
+  flex-direction: row;
 `;

@@ -6,6 +6,7 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       cardBackground: string;
+      grey: string;
       black: string;
       white: string;
       tint: string;

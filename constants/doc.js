@@ -17,3 +17,6 @@ export const doc = {
   bonus_q:
     'En bonus, il faudra afficher la liste des pharmacies de 10 en 10 avec une pagination (le mode de pagination est au choix)',
 };
+
+export const defaultPharmacyPic =
+  'https://www.maiia.com/static/images/default_pharmacy.svg';

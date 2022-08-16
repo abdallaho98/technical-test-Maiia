@@ -8,6 +8,7 @@ const theme: DefaultTheme = {
     primary: '#64C9C3',
     secondary: '#F68092',
     cardBackground: '#daeafe',
+    grey: '#666666',
     black: '#000000',
     white: '#ffffff',
     tint: '#fff',
