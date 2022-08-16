@@ -7,6 +7,7 @@ const theme: DefaultTheme = {
     ...defaultT.colors,
     primary: '#64C9C3',
     secondary: '#F68092',
+    cardBackground: '#daeafe',
     black: '#000000',
     white: '#ffffff',
     tint: '#fff',
@@ -26,6 +27,9 @@ const theme: DefaultTheme = {
       small: 16,
       medium: 24,
       title: 32,
+      extraSmall: 12,
+      TooSmall: 10,
+      TooMuchSmall: 8,
     },
   },
 };

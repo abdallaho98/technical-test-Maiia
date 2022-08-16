@@ -5,6 +5,7 @@ declare module 'styled-components' {
     colors: {
       primary: string;
       secondary: string;
+      cardBackground: string;
       black: string;
       white: string;
       tint: string;
@@ -24,6 +25,9 @@ declare module 'styled-components' {
         small: number;
         medium: number;
         title: number;
+        extraSmall: number;
+        TooSmall: number;
+        TooMuchSmall: number;
       };
     };
   }

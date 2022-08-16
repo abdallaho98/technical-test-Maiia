@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import fetchPharmacies from '../src/api/fetchers/fetchPharmacies';
+import PharmacyCard from '../src/components/PharmacyCard';
 import { Pharmacy } from '../src/models/Pharmacy';
 
 const Page = ({}) => {
@@ -20,7 +21,9 @@ const Page = ({}) => {
     setTotalLoaded(data.length);
   }, [data]);
 
-  const renderItem = ({ item }: { item: Pharmacy }) => <Text>{item.name}</Text>;
+  const renderItem = ({ item }: { item: Pharmacy }) => (
+    <PharmacyCard pharmacy={item} onPress={() => {}} />
+  );
 
   return (
     <View>
