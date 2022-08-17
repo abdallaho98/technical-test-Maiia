@@ -16,14 +16,15 @@ const App = () => {
   });
 
   return (
-  <Provider store={store}>
-    <ThemeProvider theme={appTheme}>
-      <SafeAreaProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={appTheme}>
+        <SafeAreaProvider>
           <StatusBar />
           <Router />
-      </SafeAreaProvider>
-    </ThemeProvider>
-  </Provider>
-)};
+        </SafeAreaProvider>
+      </ThemeProvider>
+    </Provider>
+  );
+};
 
 export default App;

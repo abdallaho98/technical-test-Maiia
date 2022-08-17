@@ -4,7 +4,7 @@ import fetchPharmacies from '../src/api/fetchers/fetchPharmacies';
 import PharmacyCard from '../src/components/PharmacyCard';
 import { Pharmacy } from '../src/models/Pharmacy';
 
-const Page = ({}) => {
+const Page = ({ navigation }) => {
   const [data, setData] = useState<Pharmacy[]>([]);
   const [totalLoaded, setTotalLoaded] = useState(0);
 
@@ -22,7 +22,12 @@ const Page = ({}) => {
   }, [data]);
 
   const renderItem = ({ item }: { item: Pharmacy }) => (
-    <PharmacyCard pharmacy={item} onPress={() => {}} />
+    <PharmacyCard
+      pharmacy={item}
+      onPress={() => {
+        navigation.push('Details');
+      }}
+    />
   );
 
   return (

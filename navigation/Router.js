@@ -6,6 +6,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import Home from '../screens/Home';
 import Page from '../screens/Page';
 import theme from '../src/theme/theme';
+import PharmacyDetails from '../src/screens/PharmacyDetails';
 
 const Router = () => {
   return (
@@ -25,6 +26,11 @@ const RootNavigator = () => {
         component={BottomTabNavigator}
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="Details"
+        component={PharmacyDetails}
+        options={{ headerShown: true }}
+      />
     </Stack.Navigator>
   );
 };
@@ -38,8 +44,7 @@ const BottomTabNavigator = () => {
       initialRouteName="Maiia"
       screenOptions={{
         tabBarActiveTintColor: colors.secondary,
-      }}
-    >
+      }}>
       <BottomTab.Screen
         name="Maiia"
         component={Home}
