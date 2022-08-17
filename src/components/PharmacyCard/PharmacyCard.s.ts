@@ -20,7 +20,7 @@ export const ContainerRef = styled.TouchableOpacity`
   margin-left: ${(props) => props.theme.dimensions.general}px;
   margin-right: ${(props) => props.theme.dimensions.general}px;
   flex: 1;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: ${(props) => props.theme.dimensions.space}px;
   margin-top: ${(props) => props.theme.dimensions.space}px;
 `;
@@ -68,6 +68,38 @@ export const CustomVector = styled(Image)`
 `;
 
 export const HorizontalContainer = styled.View`
-  flex: 1;
+  flex-direction: row;
+`;
+
+export const AppointmentCard = styled.View`
+  width: 64px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: ${(props) => props.theme.dimensions.space}px;
+  background-color: ${(props) => props.theme.colors.primary};
+  margin-left: ${(props) => props.theme.dimensions.general}px;
+`;
+
+export const DayContainer = styled.View`
+  width: 80px;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const DayText = styled.Text`
+  font-family: 'SpaceMono-Regular';
+  font-size: ${(props) => props.theme.font.sizes.TooMuchSmall}px;
+  color: ${(props) => props.theme.colors.black};
+`;
+
+export const AppointmentText = styled.Text`
+  font-family: 'SpaceMono-Regular';
+  font-size: ${(props) => props.theme.font.sizes.TooSmall}px;
+  color: ${(props) => props.theme.colors.white};
+`;
+
+export const AppointmentContainer = styled.View`
+  margin-top: ${(props) => props.theme.dimensions.space}px;
   flex-direction: row;
 `;

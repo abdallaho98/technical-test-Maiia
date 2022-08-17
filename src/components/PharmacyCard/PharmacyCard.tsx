@@ -11,6 +11,11 @@ import {
   HorizontalContainer,
   CustomVector,
   DistanceText,
+  AppointmentContainer,
+  AppointmentCard,
+  AppointmentText,
+  DayText,
+  DayContainer,
 } from './PharmacyCard.s';
 
 type Props = {
@@ -38,6 +43,23 @@ const PharmacyCard = ({ pharmacy, onPress }: Props) => {
               <DistanceText>Hello</DistanceText>
             </HorizontalContainer>
           </TextContainer>
+        </UpperContainer>
+        <UpperContainer>
+          <AppointmentContainer>
+            <DayContainer>
+              <TitleText>Lun</TitleText>
+              <DayText>13/09</DayText>
+            </DayContainer>
+            <AppointmentCard>
+              <AppointmentText>9:30</AppointmentText>
+            </AppointmentCard>
+            <AppointmentCard>
+              <AppointmentText>10:30</AppointmentText>
+            </AppointmentCard>
+            <AppointmentCard>
+              <AppointmentText>11:30</AppointmentText>
+            </AppointmentCard>
+          </AppointmentContainer>
         </UpperContainer>
       </ContainerRef>
     </CardContainer>
