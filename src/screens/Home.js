@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, Text, Image, ScrollView } from 'react-native';
 import { useTheme } from '@react-navigation/native';
-import { doc } from '../constants/doc';
+import { doc } from '../../constants/doc';
 
 const makeStyles = (theme) =>
   StyleSheet.create({
@@ -44,7 +44,7 @@ const Home = () => {
       <Text style={s.text}>{doc.info_2}</Text>
       <Image
         style={s.image}
-        source={require('../assets/images/card-ui.png')}
+        source={require('../../assets/images/card-ui.png')}
         resizeMode="contain"
       />
       <Text style={s.text}>{doc.info_3}</Text>

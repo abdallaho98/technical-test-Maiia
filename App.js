@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Router from './navigation/Router';
+import Router from './src/navigation/Router';
 import store from './redux/store';
 import theme from './src/theme/theme';
 import { ThemeProvider } from 'styled-components';

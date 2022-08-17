@@ -1,10 +1,16 @@
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
-import fetchPharmacies from '../src/api/fetchers/fetchPharmacies';
-import PharmacyCard from '../src/components/PharmacyCard';
-import { Pharmacy } from '../src/models/Pharmacy';
+import fetchPharmacies from '../api/fetchers/fetchPharmacies';
+import PharmacyCard from '../components/PharmacyCard';
+import { Pharmacy } from '../models/Pharmacy';
+import { RootStackParamList } from '../navigation/StackParams';
 
-const Page = ({ navigation }) => {
+type Props = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Details'>;
+};
+
+const Page = ({ navigation }: Props) => {
   const [data, setData] = useState<Pharmacy[]>([]);
   const [totalLoaded, setTotalLoaded] = useState(0);
 

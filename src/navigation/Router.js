@@ -5,8 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { FontAwesome } from '@expo/vector-icons';
 import Home from '../screens/Home';
 import Page from '../screens/Page';
-import theme from '../src/theme/theme';
-import PharmacyDetails from '../src/screens/PharmacyDetails';
+import theme from '../theme/theme';
+import PharmacyDetails from '../screens/PharmacyDetails';
 
 const Router = () => {
   return (
