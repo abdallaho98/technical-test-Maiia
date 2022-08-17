@@ -1,33 +1,29 @@
 import React from 'react';
 import { Pharmacy } from '../../models/Pharmacy';
 import {
-  CardContainer,
-  TitleText,
-  CustomImage,
-  ContainerRef,
-  UpperContainer,
-  TextContainer,
   AddressText,
-  HorizontalContainer,
-  CustomVector,
-  DistanceText,
-  AppointmentContainer,
-  AppointmentCard,
-  AppointmentText,
-  DayText,
-  DayContainer,
+  CustomImage,
+  TextContainer,
+  TitleText,
+  UpperContainer,
+  ViewContainer,
 } from './PharmacyDetails.s';
 
 type Props = {
   pharmacy: Pharmacy;
-  onPress: () => void;
 };
 
-const PharmacyDetails = ({ pharmacy, onPress }: Props) => {
+const PharmacyDetails = ({}: Props) => {
   return (
-    <>
-      <TitleText>Hello</TitleText>
-    </>
+    <ViewContainer>
+      <UpperContainer>
+        <CustomImage source={require('../../../assets/images/icon.png')} />
+        <TextContainer>
+          <TitleText>Here Name</TitleText>
+          <AddressText>Here Address</AddressText>
+        </TextContainer>
+      </UpperContainer>
+    </ViewContainer>
   );
 };
 
