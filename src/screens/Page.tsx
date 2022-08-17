@@ -5,12 +5,19 @@ import fetchPharmacies from '../api/fetchers/fetchPharmacies';
 import PharmacyCard from '../components/PharmacyCard';
 import { Pharmacy } from '../models/Pharmacy';
 import { RootStackParamList } from '../navigation/StackParams';
+import { ThunkDispatchType } from '../redux/types';
+import operations from '../redux/operations';
+import { connect } from 'react-redux';
 
-type Props = {
+type OwnProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Details'>;
 };
 
-const Page = ({ navigation }: Props) => {
+type ConnectedProps = ReturnType<typeof mapDispatchToProps>;
+
+type Props = OwnProps & ConnectedProps;
+
+const Page = ({ navigation, onUpdatePharmacy }: Props) => {
   const [data, setData] = useState<Pharmacy[]>([]);
   const [totalLoaded, setTotalLoaded] = useState(0);
 
@@ -31,6 +38,7 @@ const Page = ({ navigation }: Props) => {
     <PharmacyCard
       pharmacy={item}
       onPress={() => {
+        onUpdatePharmacy(item);
         navigation.push('Details');
       }}
     />
@@ -49,4 +57,11 @@ const Page = ({ navigation }: Props) => {
   );
 };
 
-export default Page;
+const mapDispatchToProps = (dispatch: ThunkDispatchType) => {
+  return {
+    onUpdatePharmacy: (pharmacy: Pharmacy) =>
+      dispatch(operations.updatePharmacy(pharmacy)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Page);

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Pharmacy } from '../../models/Pharmacy';
+import { connect } from 'react-redux';
+import AppState from '../../redux/types';
 import {
   AddressText,
   CustomImage,
@@ -9,22 +10,30 @@ import {
   ViewContainer,
 } from './PharmacyDetails.s';
 
-type Props = {
-  pharmacy: Pharmacy;
-};
+type Props = ReturnType<typeof mapStateToProps>;
 
-const PharmacyDetails = ({}: Props) => {
+const PharmacyDetails = ({ pharmacy }: Props) => {
   return (
     <ViewContainer>
       <UpperContainer>
-        <CustomImage source={require('../../../assets/images/icon.png')} />
+        <CustomImage
+          source={{
+            uri: pharmacy.image,
+          }}
+        />
         <TextContainer>
-          <TitleText>Here Name</TitleText>
-          <AddressText>Here Address</AddressText>
+          <TitleText>{pharmacy.name}</TitleText>
+          <AddressText>{pharmacy.address}</AddressText>
         </TextContainer>
       </UpperContainer>
     </ViewContainer>
   );
 };
 
-export default PharmacyDetails;
+const mapStateToProps = (appState: AppState) => {
+  return {
+    pharmacy: appState.pharmacyDetails,
+  };
+};
+
+export default connect(mapStateToProps)(PharmacyDetails);
