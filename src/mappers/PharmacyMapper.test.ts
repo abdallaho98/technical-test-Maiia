@@ -1,6 +1,6 @@
 import { defaultPharmacyPic } from '../../constants/doc';
 import { apiImages } from '../api/routes';
-import { PharmacyJson, pharmacyMapper } from '../mappers/PharmacyMapper';
+import { pharmacyMapper } from '../mappers/PharmacyMapper';
 import { Pharmacy } from '../models/Pharmacy';
 
 describe('Testing Mapping Json to Pharmacy', () => {
