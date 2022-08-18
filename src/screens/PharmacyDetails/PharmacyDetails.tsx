@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
+import { isPharmacyOpen } from '../../businessLogic/IsPharmacyOpen';
 import { Shift } from '../../models/Shift';
 import AppState from '../../redux/types';
 import {
@@ -53,6 +54,9 @@ const PharmacyDetails = ({ pharmacy }: Props) => {
         <TextContainer>
           <TitleText>{pharmacy.name}</TitleText>
           <AddressText>{pharmacy.address}</AddressText>
+          <AddressText>
+            {isPharmacyOpen(pharmacy) ? 'OPEN' : 'CLOSED'}
+          </AddressText>
         </TextContainer>
       </UpperContainer>
       <BlocContainer>
