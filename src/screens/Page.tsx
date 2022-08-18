@@ -8,6 +8,8 @@ import { RootStackParamList } from '../navigation/StackParams';
 import { ThunkDispatchType } from '../redux/types';
 import operations from '../redux/operations';
 import { connect } from 'react-redux';
+import Loader from '../components/Loader';
+import theme from '../theme/theme';
 
 type OwnProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Details'>;
@@ -20,6 +22,7 @@ type Props = OwnProps & ConnectedProps;
 const Page = ({ navigation, onUpdatePharmacy }: Props) => {
   const [data, setData] = useState<Pharmacy[]>([]);
   const [totalLoaded, setTotalLoaded] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const response = async () => {
@@ -27,7 +30,9 @@ const Page = ({ navigation, onUpdatePharmacy }: Props) => {
       setData(responseData);
     };
 
+    setIsLoading(true);
     response();
+    setIsLoading(false);
   }, [setData]);
 
   useEffect(() => {
@@ -48,11 +53,15 @@ const Page = ({ navigation, onUpdatePharmacy }: Props) => {
     <View>
       <Text>Nombre de résultat :</Text>
       <Text>{totalLoaded}</Text>
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
+      {isLoading ? (
+        <Loader color={theme.colors.primary} size={'large'} />
+      ) : (
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+      )}
     </View>
   );
 };
