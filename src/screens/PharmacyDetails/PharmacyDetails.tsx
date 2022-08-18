@@ -10,6 +10,8 @@ import {
   BlocText,
   BlocTitle,
   CustomImage,
+  StatusContainer,
+  StatusText,
   TextContainer,
   TitleText,
   UpperContainer,
@@ -54,9 +56,11 @@ const PharmacyDetails = ({ pharmacy }: Props) => {
         <TextContainer>
           <TitleText>{pharmacy.name}</TitleText>
           <AddressText>{pharmacy.address}</AddressText>
-          <AddressText>
-            {isPharmacyOpen(pharmacy) ? 'OPEN' : 'CLOSED'}
-          </AddressText>
+          <StatusContainer isOpen={isPharmacyOpen(pharmacy)}>
+            <StatusText isOpen={isPharmacyOpen(pharmacy)}>
+              {isPharmacyOpen(pharmacy) ? 'OPEN' : 'CLOSED'}
+            </StatusText>
+          </StatusContainer>
         </TextContainer>
       </UpperContainer>
       <BlocContainer>

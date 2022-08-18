@@ -44,6 +44,23 @@ export const AddressText = styled.Text`
   color: ${(props) => props.theme.colors.black};
 `;
 
+export const StatusContainer = styled.View<{ isOpen: boolean }>`
+  border-width: 2px;
+  border-radius: 40px;
+  border-color: ${(props) =>
+    props.isOpen ? props.theme.colors.success : props.theme.colors.error};
+  background-color: ${(props) => props.theme.colors.white};
+  margin-top: ${(props) => props.theme.dimensions.space}px;
+  align-items: center;
+`;
+
+export const StatusText = styled.Text<{ isOpen: boolean }>`
+  font-family: 'SpaceMono-Regular';
+  font-size: ${(props) => props.theme.font.sizes.extraSmall}px;
+  color: ${(props) =>
+    props.isOpen ? props.theme.colors.success : props.theme.colors.error};
+`;
+
 export const BlocContainer = styled.View`
   border-radius: ${(props) => props.theme.dimensions.space}px;
   flex: 1;
