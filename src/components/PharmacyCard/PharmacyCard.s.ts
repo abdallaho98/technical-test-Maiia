@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
-import { View, Image } from 'react-native';
+import { Image } from 'react-native';
 
-export const CardContainer = styled(View)<{ height?: number }>`
+export const CardContainer = styled.TouchableOpacity<{ height?: number }>`
   background-color: ${(props) => props.theme.colors.cardBackground};
   ${(props) => props.height && `height: ${props.height}px;`}
 `;
@@ -14,7 +14,7 @@ export const CustomImage = styled(Image)`
   background-color: ${(props) => props.theme.colors.grey};
 `;
 
-export const ContainerRef = styled.TouchableOpacity`
+export const ContainerRef = styled.View`
   border-radius: ${(props) => props.theme.dimensions.space}px;
   background-color: ${(props) => props.theme.colors.white};
   margin-left: ${(props) => props.theme.dimensions.general}px;

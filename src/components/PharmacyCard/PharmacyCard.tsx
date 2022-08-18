@@ -25,8 +25,8 @@ type Props = {
 
 const PharmacyCard = ({ pharmacy, onPress }: Props) => {
   return (
-    <CardContainer height={160}>
-      <ContainerRef onPress={() => onPress()}>
+    <CardContainer height={160} onPress={() => onPress()}>
+      <ContainerRef>
         <UpperContainer>
           <CustomImage
             source={{
