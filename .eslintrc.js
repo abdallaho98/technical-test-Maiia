@@ -16,6 +16,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/require-default-props': 'off',
     '@typescript-eslint/object-curly-spacing': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
     'prettier/prettier': [
       'error',

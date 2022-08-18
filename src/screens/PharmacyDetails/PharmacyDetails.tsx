@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { isPharmacyOpen } from '../../businessLogic/IsPharmacyOpen';
 import { Shift } from '../../models/Shift';

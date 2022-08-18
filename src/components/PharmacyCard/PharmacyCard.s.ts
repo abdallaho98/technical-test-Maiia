@@ -11,7 +11,7 @@ export const CustomImage = styled(Image)`
   height: 80px;
   border-radius: 40px;
   margin-right: ${(props) => props.theme.dimensions.general}px;
-  background-color: ${(props) => props.theme.colors.secondary};
+  background-color: ${(props) => props.theme.colors.grey};
 `;
 
 export const ContainerRef = styled.TouchableOpacity`
