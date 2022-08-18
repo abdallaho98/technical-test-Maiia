@@ -1,8 +1,12 @@
 import React from 'react';
+import { Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import AppState from '../../redux/types';
 import {
   AddressText,
+  BlocContainer,
+  BlocText,
+  BlocTitle,
   CustomImage,
   TextContainer,
   TitleText,
@@ -13,7 +17,10 @@ import {
 type Props = ReturnType<typeof mapStateToProps>;
 
 const PharmacyDetails = ({ pharmacy }: Props) => {
-  console.error(pharmacy);
+  const renderItem = ({ item }: { item: string }) => (
+    <BlocText>{item}</BlocText>
+  );
+
   return (
     <ViewContainer>
       <UpperContainer>
@@ -27,6 +34,15 @@ const PharmacyDetails = ({ pharmacy }: Props) => {
           <AddressText>{pharmacy.address}</AddressText>
         </TextContainer>
       </UpperContainer>
+      <BlocContainer>
+        <BlocTitle>Specialités</BlocTitle>
+        <FlatList
+          data={pharmacy.specialties}
+          renderItem={renderItem}
+          keyExtractor={(item) => item}
+        />
+      </BlocContainer>
+      <BlocContainer />
     </ViewContainer>
   );
 };

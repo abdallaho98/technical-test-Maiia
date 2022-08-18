@@ -43,3 +43,30 @@ export const AddressText = styled.Text`
   font-size: ${(props) => props.theme.font.sizes.extraSmall}px;
   color: ${(props) => props.theme.colors.black};
 `;
+
+export const BlocContainer = styled.View`
+  border-radius: ${(props) => props.theme.dimensions.space}px;
+  flex: 1;
+  flex-direction: column;
+  height: 200px;
+  background-color: ${(props) => props.theme.colors.white};
+  margin-left: ${(props) => props.theme.dimensions.general}px;
+  margin-right: ${(props) => props.theme.dimensions.general}px;
+  margin-bottom: ${(props) => props.theme.dimensions.general}px;
+  margin-top: ${(props) => props.theme.dimensions.general}px;
+  padding-left: ${(props) => props.theme.dimensions.space}px;
+  padding-right: ${(props) => props.theme.dimensions.space}px;
+  padding-bottom: ${(props) => props.theme.dimensions.space}px;
+  padding-top: ${(props) => props.theme.dimensions.space}px;
+`;
+
+export const BlocTitle = styled.Text`
+  font-weight: 900;
+  font-size: ${(props) => props.theme.font.sizes.small}px;
+  color: ${(props) => props.theme.colors.black};
+`;
+
+export const BlocText = styled.Text`
+  font-size: ${(props) => props.theme.font.sizes.extraSmall}px;
+  color: ${(props) => props.theme.colors.black};
+`;
