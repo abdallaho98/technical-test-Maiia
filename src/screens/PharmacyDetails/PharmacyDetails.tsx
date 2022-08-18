@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
+import { Shift } from '../../models/Shift';
 import AppState from '../../redux/types';
 import {
   AddressText,
@@ -14,11 +15,31 @@ import {
   ViewContainer,
 } from './PharmacyDetails.s';
 
+interface Agenda {
+  day: string;
+  times: string;
+}
+
 type Props = ReturnType<typeof mapStateToProps>;
 
 const PharmacyDetails = ({ pharmacy }: Props) => {
-  const renderItem = ({ item }: { item: string }) => (
+  const agenda = Object.keys(pharmacy.schedule).map((key) => {
+    let times = '';
+    pharmacy.schedule[key].forEach((shift: Shift) => {
+      times += shift.start + ' ' + shift.end + '   /   ';
+    });
+    return {
+      day: key,
+      times: times,
+    } as Agenda;
+  }) as Agenda[];
+
+  const renderSpecialty = ({ item }: { item: string }) => (
     <BlocText>{item}</BlocText>
+  );
+
+  const renderAgenda = ({ item }: { item: Agenda }) => (
+    <BlocText>{item.day + '   ' + item.times}</BlocText>
   );
 
   return (
@@ -38,11 +59,18 @@ const PharmacyDetails = ({ pharmacy }: Props) => {
         <BlocTitle>Specialités</BlocTitle>
         <FlatList
           data={pharmacy.specialties}
-          renderItem={renderItem}
+          renderItem={renderSpecialty}
           keyExtractor={(item) => item}
         />
       </BlocContainer>
-      <BlocContainer />
+      <BlocContainer>
+        <BlocTitle>Agenda</BlocTitle>
+        <FlatList
+          data={agenda}
+          renderItem={renderAgenda}
+          keyExtractor={(item) => item.day}
+        />
+      </BlocContainer>
     </ViewContainer>
   );
 };
