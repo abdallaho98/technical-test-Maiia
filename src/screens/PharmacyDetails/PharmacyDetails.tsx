@@ -13,6 +13,7 @@ import {
 type Props = ReturnType<typeof mapStateToProps>;
 
 const PharmacyDetails = ({ pharmacy }: Props) => {
+  console.error(pharmacy);
   return (
     <ViewContainer>
       <UpperContainer>
